@@ -19,11 +19,27 @@ public class Usuario {
     private String nome;
     private String email;
     private String senha;
+    private Boolean ativo;
 
     public Usuario(DadosCadastroUsuario dados) {
         this.nome = dados.nome();
         this.email = dados.email();
         this.senha = dados.senha();
+        this.ativo = true;
 
+    }
+
+    public void atualizarInformacoes(DadosAtualizacaoUsuario dados) {
+        if (dados.nome() !=null) {
+            this.nome = dados.nome();
+        }
+
+        if (dados.senha() !=null) {
+            this.senha = dados.senha();
+        }
+    }
+
+    public void excluir() {
+        this.ativo = false;
     }
 }
