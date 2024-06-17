@@ -31,13 +31,11 @@ public class UsuarioController {
 
         return ResponseEntity.created(uri).body(new DadosDetalhamentoUsuario(usuario));
     }
-
     @GetMapping
     public ResponseEntity <Page<DadosListagemUsuario>> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao) {
         var page = usuarioRepository.findAllByAtivoTrue(paginacao).map(DadosListagemUsuario::new);
         return ResponseEntity.ok(page);
     }
-
     @PutMapping
     @Transactional
     public ResponseEntity atualizar(@RequestBody @Valid DadosAtualizacaoUsuario dados) {
@@ -46,7 +44,6 @@ public class UsuarioController {
 
         return ResponseEntity.ok(new DadosDetalhamentoUsuario(usuario));
     }
-
     @DeleteMapping("/{id}")
     @Transactional
     public ResponseEntity excluir(@PathVariable Long id) {
@@ -54,4 +51,11 @@ public class UsuarioController {
         usuario.excluir();
         return ResponseEntity.noContent().build();
     }
+    @GetMapping("/{id}")
+    public ResponseEntity detalhar(@PathVariable Long id) {
+        var usuario = usuarioRepository.getReferenceById(id);
+        return ResponseEntity.ok(new DadosDetalhamentoUsuario(usuario));
+    }
+
+
 }

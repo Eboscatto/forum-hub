@@ -17,7 +17,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 public class CursoController {
     @Autowired
     private CursoRepository cursoRepository;
-
     @PostMapping
     @Transactional
     public ResponseEntity cadastrar(@RequestBody @Valid DadosCadastroCurso dados, UriComponentsBuilder uriBuilder) {
@@ -33,7 +32,6 @@ public class CursoController {
          var page =cursoRepository.findAllByAtivoTrue(paginacao).map(DadosListagemCurso::new);
         return ResponseEntity.ok(page);
     }
-
     @PutMapping
     @Transactional
     public ResponseEntity atualizar(@RequestBody @Valid DadosAtualizacaoCurso dados) {
@@ -41,12 +39,16 @@ public class CursoController {
         curso.atualizarInformacoes(dados);
         return ResponseEntity.ok(new DadosDetalhamentoCurso(curso));
     }
-
     @DeleteMapping("/{id}")
     @Transactional
     public ResponseEntity excluir(@PathVariable Long id) {
         var curso = cursoRepository.getReferenceById(id);
         curso.excluir();
         return ResponseEntity.noContent().build();
+    }
+    @GetMapping("/{id}")
+    public ResponseEntity detalhar(@PathVariable Long id) {
+        var curso = cursoRepository.getReferenceById(id);
+        return ResponseEntity.ok(new DadosDetalhamentoCurso(curso));
     }
 }
