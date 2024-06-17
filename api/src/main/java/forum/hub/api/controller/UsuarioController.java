@@ -56,6 +56,4 @@ public class UsuarioController {
         var usuario = usuarioRepository.getReferenceById(id);
         return ResponseEntity.ok(new DadosDetalhamentoUsuario(usuario));
     }
-
-
 }
