@@ -1,7 +1,7 @@
 package forum.hub.api.curso;
 
-public record DadosListagemCurso(String nome, Categoria categoria) {
+public record DadosListagemCurso(Long id, String nome, Categoria categoria) {
     public DadosListagemCurso(Curso curso){
-        this(curso.getNome(), curso.getCategoria());
+        this(curso.getId(), curso.getNome(), curso.getCategoria());
     }
 }
