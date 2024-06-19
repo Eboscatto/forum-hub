@@ -14,7 +14,7 @@ public record DadosCadastroUsuario(
         @Email
         String email,
         @NotBlank
-        @Pattern(regexp ="\\d{8,12}" )
+        @Pattern(regexp ="\\d{6,255}" )
         String senha) {
 
 }
