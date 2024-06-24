@@ -1,4 +1,4 @@
-package forum.hub.api.curso;
+package forum.hub.api.domain.curso;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

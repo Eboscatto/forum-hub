@@ -1,4 +1,4 @@
-package forum.hub.api.curso;
+package forum.hub.api.domain.curso;
 
 public enum Categoria {
     TECNOLOGIA,

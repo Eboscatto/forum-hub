@@ -1,7 +1,7 @@
 package forum.hub.api.infra.security;
 
 
-import forum.hub.api.login.LoginRepository;
+import forum.hub.api.domain.login.LoginRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

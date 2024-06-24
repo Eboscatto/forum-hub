@@ -1,4 +1,4 @@
-package forum.hub.api.curso;
+package forum.hub.api.domain.curso;
 
 public record DadosListagemCurso(Long id, String nome, Categoria categoria) {
     public DadosListagemCurso(Curso curso){

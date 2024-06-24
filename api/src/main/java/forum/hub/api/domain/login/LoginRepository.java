@@ -1,4 +1,4 @@
-package forum.hub.api.login;
+package forum.hub.api.domain.login;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.core.userdetails.UserDetails;

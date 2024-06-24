@@ -1,4 +1,4 @@
-package forum.hub.api.usuario;
+package forum.hub.api.domain.usuario;
 
 public record DadosDetalhamentoUsuario(Long id, String nome, String email, String senha, Boolean ativo) {
 
