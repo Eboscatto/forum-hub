@@ -1,6 +1,7 @@
 package forum.hub.api.domain.topico;
 
 import forum.hub.api.domain.curso.Curso;
+import forum.hub.api.domain.usuario.DadosAtualizacaoUsuario;
 import forum.hub.api.domain.usuario.Usuario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -35,4 +36,18 @@ public class Topico {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "curso_id")
     private Curso curso;
+
+    public void atualizarInformacoes(DadosAtualizacaoTopico dados) {
+        if (dados.titulo() != null) {
+            this.titulo = dados.titulo();
+        }
+
+        if (dados.mensagem() != null) {
+            this.mensagem = dados.mensagem();
+        }
+
+        if (dados.status() != null) {
+            this.status = dados.status();
+        }
+    }
 }

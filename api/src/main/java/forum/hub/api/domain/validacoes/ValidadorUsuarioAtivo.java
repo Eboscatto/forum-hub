@@ -22,16 +22,5 @@ public class ValidadorUsuarioAtivo implements ValidadorPostagemDeTopico {
         if (!usuarioEstaAtivo) {
             throw new ValidacaoException("Tópico não pode ser criado com usuário inativo!");
         }
-
-        if (dados.idCurso() == null) {
-            return;
-        }
-
-        var cursoEstaAtivo = cursoRepository.findAtivoById(dados.idCurso());
-        if (!cursoEstaAtivo) {
-            throw new ValidacaoException("Curso informado não está ativo, operação não realizada!");
-
-        }
-
     }
 }

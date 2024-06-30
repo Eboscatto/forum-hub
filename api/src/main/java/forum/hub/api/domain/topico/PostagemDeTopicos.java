@@ -7,6 +7,7 @@ import forum.hub.api.infra.exception.ValidacaoException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -37,7 +38,7 @@ public class PostagemDeTopicos {
 
         var autor = usuarioRepository.getReferenceById(dados.idAutor());
         var curso = cursoRepository.getReferenceById(dados.idCurso());
-        var topico = new Topico(null, dados.titulo(), dados.mensagem(), dados.dataCriacao(), dados.status(), autor, curso);
+        var topico = new Topico(null, dados.titulo(), dados.mensagem(), LocalDateTime.now(), StatusTopico.NAO_RESPONDIDO, autor, curso);
         topicoRepository.save(topico);
 
         return new DadosDetalhamentoTopico(topico);

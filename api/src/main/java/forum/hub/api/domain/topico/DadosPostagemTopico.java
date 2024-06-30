@@ -10,8 +10,6 @@ public record DadosPostagemTopico(
         String titulo,
         @NotBlank
         String mensagem,
-        LocalDateTime dataCriacao,
-        StatusTopico status,
         @NotNull
         Long idAutor,
         @NotNull
