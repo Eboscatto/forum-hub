@@ -42,7 +42,6 @@ public class SecurityFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 
-
     // Recupera o token
     private String recuperarToken(HttpServletRequest request) {
 
@@ -53,5 +52,4 @@ public class SecurityFilter extends OncePerRequestFilter {
         }
         return null;
     }
-
 }

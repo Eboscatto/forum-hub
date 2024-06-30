@@ -5,6 +5,7 @@ import forum.hub.api.domain.usuario.DadosAtualizacaoUsuario;
 import forum.hub.api.domain.usuario.DadosDetalhamentoUsuario;
 import forum.hub.api.domain.usuario.DadosListagemUsuario;
 import forum.hub.api.domain.usuario.UsuarioRepository;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -18,6 +19,7 @@ import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("topicos")
+@SecurityRequirement(name = "bearer-key")
 
 public class TopicoController {
 
