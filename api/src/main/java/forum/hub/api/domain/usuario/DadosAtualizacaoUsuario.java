@@ -7,5 +7,5 @@ public record DadosAtualizacaoUsuario(
         @NotNull
         Long id,
         String  nome,
-        String senha) {
+        String email) {
 }

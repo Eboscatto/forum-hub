@@ -18,13 +18,11 @@ public class Usuario {
     private Long id;
     private String nome;
     private String email;
-    private String senha;
     private Boolean ativo;
 
     public Usuario(DadosCadastroUsuario dados) {
         this.nome = dados.nome();
         this.email = dados.email();
-        this.senha = dados.senha();
         this.ativo = true;
     }
 
@@ -33,12 +31,13 @@ public class Usuario {
             this.nome = dados.nome();
         }
 
-        if (dados.senha() != null) {
-            this.senha = dados.senha();
+        if (dados.email() != null) {
+            this.email = dados.email();
         }
     }
-
     public void excluir() {
         this.ativo = false;
     }
 }
+
+

@@ -1,5 +1,6 @@
 package forum.hub.api.controller;
 
+import forum.hub.api.domain.usuario.Usuario;
 import forum.hub.api.infra.security.DadosTokenJWT;
 import forum.hub.api.infra.security.TokenService;
 import forum.hub.api.domain.login.DadosAutenticacao;
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+
 
 @RestController
 @RequestMapping("/login")
