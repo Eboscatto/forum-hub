@@ -1,6 +1,7 @@
 package forum.hub.api.domain.usuario;
 
 import jakarta.persistence.*;
+import jakarta.transaction.Status;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -24,6 +25,10 @@ public class Usuario {
         this.nome = dados.nome();
         this.email = dados.email();
         this.ativo = true;
+    }
+
+    public Usuario(String teste, String mail, Status Ativo) {
+
     }
 
     public void atualizarInformacoes(DadosAtualizacaoUsuario dados) {
