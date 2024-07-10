@@ -32,8 +32,6 @@ Os testes na API poderão ser executados utilizando:
 
 Desenvolver exemplo de API Rest que pode ser reutilizável em outros projetos.
 
-A documentação das funcionalidades da aplicação pode ser acessada neste link: <a href="https://trello.com/b/W5qxhjX2/forum-hub-challenge-back-end">Trello</a>
-
 ---
 
 ## 🛠 Tecnologias
